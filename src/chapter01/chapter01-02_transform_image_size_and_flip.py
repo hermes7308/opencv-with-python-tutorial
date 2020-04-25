@@ -6,16 +6,16 @@ assert img is not None
 print("original image shape:", img.shape)
 
 width, height = 128, 256
-resizeImg = cv2.resize(img, (width, height))
-print("resize to 128x256 image shape:", resizeImg.shape)
+resized_img = cv2.resize(img, (width, height))
+print("resize to 128x256 image shape:", resized_img.shape)
 
-widthMult, heightMult = 0.25, 0.5
-resizeImg = cv2.resize(img, (0, 0), resizeImg, widthMult, heightMult)
-print("image shape:", resizeImg.shape)
+w_mult, h_mult = 0.25, 0.5
+resized_img = cv2.resize(img, (0, 0), resized_img, w_mult, h_mult)
+print("image shape:", resized_img.shape)
 
-widthMult, heightMult = 2, 4
-resizeImg = cv2.resize(img, (0, 0), resizeImg, widthMult, heightMult, cv2.INTER_NEAREST)
-print("half sized image shape:", resizeImg.shape)
+w_mult, h_mult = 2, 4
+resized_img = cv2.resize(img, (0, 0), resized_img, w_mult, h_mult, cv2.INTER_NEAREST)
+print("half sized image shape:", resized_img.shape)
 
 imgFlipAlongX = cv2.flip(img, 0)
 
